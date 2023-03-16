@@ -1,0 +1,123 @@
+// Imports -------------------------------------------------------------
+@import 'partials/colors.scss';
+
+// Global Settings -------------------------------------------------------------
+
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+:root {
+    --sideBar-width: 250px;
+}
+
+// Side Bar Container -----------------------------------------------------------
+
+nav.sidebar_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--sideBar-width);
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    overflow:scroll;
+    overflow-x: hidden;
+    box-shadow: 10px 10px 10px yellow;
+}
+button {
+    float: right;
+}
+.xmark {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background:none;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+// SideBar Link Container & Icons ------------------------------------------------
+
+nav.sidebar_container ul {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin:  45px 10px 0 10px;
+    scrollbar-color: yellow;
+    list-style-type: none;
+    i {
+        font-size: 1.3em;
+        color: white;
+        margin:0 15px 0 10px;
+        text-align: center;
+    }
+}
+#notes {
+    margin: 0 15px 0 15px;
+}
+#last_icon {
+    margin: 0 25px 0 20px;
+}
+nav.sidebar_container ul li a {
+    flex-direction: row;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    outline: none;
+    padding: 10px 0 10px 0;
+    border-radius: 20px;
+    margin:5px 0px 5px 0px;
+    width: 100%;
+    &:hover, &:focus {
+        transition: background, 300ms ease-in-out;
+        background: yellowgreen;
+        outline: none;
+    }
+}
+.no_display {
+    width: 0%;
+}
+nav.sidebar_container ul li a section {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    p {
+        font-size: 1.1rem;
+    }
+}
+
+// Scroll Bar -------------------------------------------------------------
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: $scrollbar_thumb_color;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-corner {
+    background: none;
+}
+::-webkit-scrollbar-track {
+   background-color: $scrollbar_track_color;
+   border-radius: 10px;
+}
+
+// Media Queries -------------------------------------------------------------
+
+@media only screen and(max-width:1000px) {
+    section {
+        width: 100%;
+    }
+    nav.sidebar_container {
+        width: 60%;
+    }
+    nav.sidebar_container ul li a section p {
+        font-size: 1em;
+    }
+}
